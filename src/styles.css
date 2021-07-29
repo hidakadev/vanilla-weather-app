@@ -3,11 +3,20 @@
     border: 1px solid #e5fbb8;
     border-radius: 20px;
     font-family: "Miriam Libre", sans-serif;
-    margin: 25px;
+    margin: 50px;
     padding: 20px;
 }
 
-h1 {
+h1,
+h2 {
     font-weight: bold;
+}
+
+h1 {
     font-size: 40px;
+}
+
+h2 {
+    color: #b980f0;
+    font-size: 30px;
 }
