@@ -1,5 +1,5 @@
 .weather-app {
-    background-color: #f1f1f1;
+    background: linear-gradient(to bottom, #f1f1f1 0%, white 100%);
     border: 1px solid #fdb827;
     border-radius: 20px;
     box-shadow: 5px 5px 0px 0px #fdb827;
