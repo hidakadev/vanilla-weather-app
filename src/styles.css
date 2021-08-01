@@ -5,7 +5,6 @@
     box-shadow: 5px 5px 0px 0px #fdb827;
     font-family: "Miriam Libre", sans-serif;
     line-height: 1.5;
-    padding: 20px;
 }
 
 .current-city-info {
@@ -13,6 +12,23 @@
     font-weight: bold;
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+
+a {
+    color: #ce1212;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ce1212;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+footer {
+    font-size: 11px;
     text-align: center;
 }
 
@@ -39,7 +55,6 @@ h2 {
 
 h3 {
     font-size: 20px;
-    margin-top: 30px;
 }
 
 li {
