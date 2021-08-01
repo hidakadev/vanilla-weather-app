@@ -2,7 +2,8 @@
     background-color: #f1f1f1;
     border: 1px solid #fdb827;
     border-radius: 20px;
-    color: #23120b;
+    box-shadow: 5px 5px 0px 0px #fdb827;
+    shad color: #23120b;
     font-family: "Miriam Libre", sans-serif;
     line-height: 1.5;
     padding: 20px;
