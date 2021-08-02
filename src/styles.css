@@ -16,13 +16,13 @@
 }
 
 .temperature {
-    font-size: 50px;
-    vertical-align: top;
+    font-size: 60px;
 }
 
 .temperature-unit {
     font-size: 20px;
-    vertical-align: baseline;
+    position: relative;
+    top: -30px;
 }
 
 a {
@@ -69,8 +69,9 @@ h3 {
 
 img {
     max-width: 100px;
-    vertical-align: text-bottom;
+    position: relative;
     text-align: center;
+    top: 10px;
 }
 
 li {
