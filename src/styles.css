@@ -15,6 +15,16 @@
     text-align: center;
 }
 
+.temperature {
+    font-size: 50px;
+    vertical-align: top;
+}
+
+.temperature-unit {
+    font-size: 20px;
+    vertical-align: baseline;
+}
+
 a {
     color: #ce1212;
     font-weight: bold;
@@ -55,6 +65,12 @@ h2 {
 
 h3 {
     font-size: 20px;
+}
+
+img {
+    max-width: 100px;
+    vertical-align: text-bottom;
+    text-align: center;
 }
 
 li {
