@@ -72,15 +72,15 @@ function displayFahrenheitTemp(event) {
     fahrenheitLink.classList.add("active");
 }
 
-let celsiusTemp = null;
-
 function displayCelsiusTemp(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsiusTemp);
     celsiusLink.classList.add("active");
     fahrenheitLink.classList.remove("active");
-    temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", handleSubmit);
