@@ -49,8 +49,19 @@ function displayTemperature(response) {
     windspeedElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
-let apiKey = "4dd3862c2f0dfdc275854923e14a1ea3";
-let cityName = "Dublin";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+function search(cityName) {
+    let apiKey = "4dd3862c2f0dfdc275854923e14a1ea3";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityinputElement = document.querySelector("#city-input");
+    search(cityinputElement.value);
+}
+
+let form = document.querySelector("#search-engine");
+form.addEventListener("submit", handleSubmit);
+
+search("Dublin");

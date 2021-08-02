@@ -12,18 +12,15 @@
     font-weight: bold;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 .temperature-display {
     font-size: 60px;
-    text-align: right;
 }
 
 .temperature-unit {
     font-size: 20px;
     position: relative;
-    text-align: right;
     top: -30px;
 }
 
@@ -54,11 +51,6 @@ h3 {
     font-weight: bold;
 }
 
-h1,
-h2 {
-    text-align: center;
-}
-
 h1 {
     font-size: 40px;
     text-decoration: underline;
@@ -74,11 +66,9 @@ h3 {
 }
 
 img {
-    display: block;
     height: auto;
-    max-width: 100px;
+    max-width: 100%;
     position: relative;
-    text-align: center;
     top: 10px;
 }
 
