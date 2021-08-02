@@ -1,8 +1,8 @@
 .weather-app {
     background: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    border: 1px solid #fdb827;
+    border: 1px solid #f1f1f1;
     border-radius: 20px;
-    box-shadow: 5px 5px 0px 0px #fdb827;
+    box-shadow: 5px 5px 0px 0px #f1f1f1;
     font-family: "Miriam Libre", sans-serif;
     line-height: 1.5;
 }
@@ -32,7 +32,7 @@
 }
 
 a {
-    color: #ce1212;
+    color: #e97878;
     font-weight: bold;
     text-decoration: none;
 }
