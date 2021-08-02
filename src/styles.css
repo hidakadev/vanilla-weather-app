@@ -68,6 +68,8 @@ h3 {
 }
 
 img {
+    display: block;
+    height: auto;
     max-width: 100px;
     position: relative;
     text-align: center;
@@ -79,5 +81,8 @@ li {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+li::first-letter {
     text-transform: capitalize;
 }

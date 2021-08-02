@@ -1,18 +1,44 @@
+function formatDate(timestamp) {
+    let date = new Date(timestamp);
+    let hours = date.getHours();
+    if (hours < 10) {
+        hours = `0${minutes}`;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+    }
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+    let day = days[date.getDay()];
+    return `${day} ${hours}:${minutes}`;
+}
+
 function displayTemperature(response) {
-    let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
+    let dateElement = document.querySelector("#date");
     let descriptionElement = document.querySelector("#description");
-    let tempmaxElement = document.querySelector("#temp-max");
-    let tempminElement = document.querySelector("#temp-min");
     let feelslikeElement = document.querySelector("#feels-like");
     let humidityElement = document.querySelector("#humidity");
+    let temperatureElement = document.querySelector("#temperature");
+    let tempmaxElement = document.querySelector("#temp-max");
+    let tempminElement = document.querySelector("#temp-min");
     let windspeedElement = document.querySelector("#wind-speed");
-    temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
-    tempmaxElement.innerHTML = Math.round(response.data.main.temp_max);
-    tempminElement.innerHTML = Math.round(response.data.main.temp_min);
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    descriptionElement.innerHTML = response.data.weather[0].description;
     feelslikeElement.innerHTML = Math.round(response.data.main.feels_like);
     humidityElement.innerHTML = Math.round(response.data.main.humidity);
+    temperatureElement.innerHTML = Math.round(response.data.main.temp);
+    tempmaxElement.innerHTML = Math.round(response.data.main.temp_max);
+    tempminElement.innerHTML = Math.round(response.data.main.temp_min);
     windspeedElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
