@@ -1,12 +1,3 @@
-.weather-app {
-    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    border: 1px solid #f1f1f1;
-    border-radius: 20px;
-    box-shadow: 5px 5px 0px 0px #f1f1f1;
-    font-family: "Miriam Libre", sans-serif;
-    line-height: 1.5;
-}
-
 .current-city-info {
     font-size: 25px;
     font-weight: bold;
@@ -22,6 +13,28 @@
     font-size: 20px;
     position: relative;
     top: -30px;
+}
+
+.weather-app {
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    border: 1px solid #f1f1f1;
+    border-radius: 20px;
+    box-shadow: 5px 5px 0px 0px #f1f1f1;
+    color: #1b262c;
+    font-family: "Miriam Libre", sans-serif;
+    line-height: 1.5;
+}
+
+.weather-temperature {
+    color: black;
+}
+
+.weather-temperature .active {
+    cursor: default;
+}
+
+.weather-temperature .active:hover {
+    text-decoration: none;
 }
 
 #date {

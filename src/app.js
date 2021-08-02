@@ -33,6 +33,8 @@ function displayTemperature(response) {
     let tempminElement = document.querySelector("#temp-min");
     let windspeedElement = document.querySelector("#wind-speed");
 
+    celsiusTemp = response.data.main.temp;
+
     cityElement.innerHTML = response.data.name;
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     descriptionElement.innerHTML = response.data.weather[0].description;
@@ -43,7 +45,7 @@ function displayTemperature(response) {
         `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
     iconElement.setAttribute("alt", response.data.weather[0].description);
-    temperatureElement.innerHTML = Math.round(response.data.main.temp);
+    temperatureElement.innerHTML = Math.round(celsiusTemp);
     tempmaxElement.innerHTML = Math.round(response.data.main.temp_max);
     tempminElement.innerHTML = Math.round(response.data.main.temp_min);
     windspeedElement.innerHTML = Math.round(response.data.wind.speed);
@@ -61,7 +63,32 @@ function handleSubmit(event) {
     search(cityinputElement.value);
 }
 
+function displayFahrenheitTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+}
+
+let celsiusTemp = null;
+
+function displayCelsiusTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-converter");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-converter");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Dublin");
