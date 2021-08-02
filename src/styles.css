@@ -17,11 +17,13 @@
 
 .temperature-display {
     font-size: 60px;
+    text-align: right;
 }
 
 .temperature-unit {
     font-size: 20px;
     position: relative;
+    text-align: right;
     top: -30px;
 }
 
@@ -72,7 +74,7 @@ img {
     height: auto;
     max-width: 100px;
     position: relative;
-    text-align: center;
+    text-align: left;
     top: 10px;
 }
 

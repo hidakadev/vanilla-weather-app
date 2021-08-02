@@ -27,15 +27,22 @@ function displayTemperature(response) {
     let descriptionElement = document.querySelector("#description");
     let feelslikeElement = document.querySelector("#feels-like");
     let humidityElement = document.querySelector("#humidity");
+    let iconElement = document.querySelector("#weather-icon");
     let temperatureElement = document.querySelector("#temperature");
     let tempmaxElement = document.querySelector("#temp-max");
     let tempminElement = document.querySelector("#temp-min");
     let windspeedElement = document.querySelector("#wind-speed");
+
     cityElement.innerHTML = response.data.name;
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     descriptionElement.innerHTML = response.data.weather[0].description;
     feelslikeElement.innerHTML = Math.round(response.data.main.feels_like);
     humidityElement.innerHTML = Math.round(response.data.main.humidity);
+    iconElement.setAttribute(
+        "src",
+        `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconElement.setAttribute("alt", response.data.weather[0].description);
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     tempmaxElement.innerHTML = Math.round(response.data.main.temp_max);
     tempminElement.innerHTML = Math.round(response.data.main.temp_min);
@@ -43,8 +50,7 @@ function displayTemperature(response) {
 }
 
 let apiKey = "4dd3862c2f0dfdc275854923e14a1ea3";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dublin&appid=${apiKey}&units=metric`;
-
-console.log(apiUrl);
+let cityName = "Dublin";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
