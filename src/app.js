@@ -21,6 +21,36 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast(response) {
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    days.forEach(function(day) {
+        forecastHTML =
+            forecastHTML +
+            `<div class="col-2"><h3>${day}</h3>
+        <ul>
+        <li><img src="#" alt="" width="40"></li>
+        <li class="forecast-temp-max">Max</li>
+        <li class="forecast-temp-min">Min</li>
+        </ul>
+        </div>`;
+    });
+
+    forecastHTML = forecastHTML + `</div>`;
+
+    forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+    let apiKey = "4dd3862c2f0dfdc275854923e14a1ea3";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
     let cityElement = document.querySelector("#city");
     let dateElement = document.querySelector("#date");
@@ -49,6 +79,8 @@ function displayTemperature(response) {
     tempmaxElement.innerHTML = Math.round(response.data.main.temp_max);
     tempminElement.innerHTML = Math.round(response.data.main.temp_min);
     windspeedElement.innerHTML = Math.round(response.data.wind.speed);
+
+    getForecast(response.data.coord);
 }
 
 function search(cityName) {
@@ -92,3 +124,5 @@ let celsiusLink = document.querySelector("#celsius-converter");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Dublin");
+
+displayForecast();

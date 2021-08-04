@@ -5,6 +5,13 @@
     padding: 0;
 }
 
+.forecast-temp-max,
+.forecast-temp-min {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
 .forecast-temp-max {
     font-weight: bold;
 }
@@ -35,6 +42,7 @@
 
 .weather-forecast {
     font-size: 16px;
+    text-align: center;
 }
 
 .weather-temperature {
@@ -63,13 +71,14 @@ a {
 }
 
 a:hover {
-    color: #ce1212;
+    color: #21209c;
     cursor: pointer;
     text-decoration: underline;
 }
 
 footer {
     font-size: 11px;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -109,4 +118,9 @@ li {
 
 li::first-letter {
     text-transform: capitalize;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
 }
