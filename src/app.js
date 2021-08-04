@@ -23,10 +23,10 @@ function formatDate(timestamp) {
 
 function formatDay(timestamps) {
     let forecastDate = new Date(timestamps * 1000);
-    let day = forecastDate.getDay();
+    let nextDay = forecastDate.getDay();
     let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-    return weekdays[day];
+    return weekdays[nextDay];
 }
 
 function displayForecast(response) {
@@ -37,7 +37,7 @@ function displayForecast(response) {
     let forecastHTML = `<div class="row">`;
 
     forecast.forEach(function(forecastDay, index) {
-        if (index < 6) {
+        if (0 > index > 7) {
             forecastHTML =
                 forecastHTML +
                 `<div class="col-2"><h3>${
