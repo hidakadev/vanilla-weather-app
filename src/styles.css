@@ -1,5 +1,5 @@
 .current-city-info {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -23,6 +23,14 @@
     color: #1b262c;
     font-family: "Miriam Libre", sans-serif;
     line-height: 1.5;
+}
+
+.weather-details {
+    font-size: 20px;
+}
+
+.weather-forecast {
+    font-size: 16px;
 }
 
 .weather-temperature {
@@ -89,7 +97,6 @@ img {
 }
 
 li {
-    font-size: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
