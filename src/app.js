@@ -30,19 +30,19 @@ function formatDay(timestamps) {
 }
 
 function displayForecast(resp) {
-    let forecast = resp.data.daily;
+    let forecastData = resp.data.daily;
 
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
 
-    forecast.forEach(function(forecastDay, index) {
+    forecastData.forEach(function(forecastDay, index) {
         if (0 > index > 7) {
             forecastHTML =
                 forecastHTML +
-                `<div class="col-2"><h3>${
+                `<div class="col-2"><h3>${formatDay(
           forecastDay.dt
-        }</h3><ul><li><img src="https://openweathermap.org/img/wn/${
+        )}</h3><ul><li><img src="https://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png" alt="${forecastDay.weather[0].description}" width="40"></li>
             <li class="forecast-temp-max">${Math.round(
@@ -63,8 +63,8 @@ function displayForecast(resp) {
 
 function getForecast(coordinates) {
     let apiKey = "4dd3862c2f0dfdc275854923e14a1ea3";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayForecast);
+    let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrlForecast).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -140,5 +140,3 @@ let celsiusLink = document.querySelector("#celsius-converter");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Dublin");
-
-displayForecast();
