@@ -68,6 +68,11 @@
     font-weight: normal;
 }
 
+#weather-icon {
+    position: relative;
+    left: -50px;
+}
+
 a {
     color: #e97878;
     font-weight: bold;
