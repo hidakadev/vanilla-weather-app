@@ -37,7 +37,7 @@ function displayForecast(resp) {
     let forecastHTML = `<div class="row">`;
 
     forecastData.forEach(function(forecastDay, index) {
-        if (0 > index > 7) {
+        if (index > 0 && index < 7) {
             forecastHTML =
                 forecastHTML +
                 `<div class="col-2"><h3>${formatDay(
@@ -140,3 +140,5 @@ let celsiusLink = document.querySelector("#celsius-converter");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Dublin");
+
+displayForecast();
