@@ -69,6 +69,7 @@ function getForecast(coordinates) {
 
 function displayTemperature(response) {
     let cityElement = document.querySelector("#city");
+    let countryElement = document.querySelector("#country");
     let dateElement = document.querySelector("#date");
     let descriptionElement = document.querySelector("#description");
     let feelslikeElement = document.querySelector("#feels-like");
@@ -82,6 +83,7 @@ function displayTemperature(response) {
     celsiusTemp = response.data.main.temp;
 
     cityElement.innerHTML = response.data.name;
+    countryElement.innerHTML = response.data.sys.country;
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     descriptionElement.innerHTML = response.data.weather[0].description;
     feelslikeElement.innerHTML = Math.round(response.data.main.feels_like);
@@ -139,6 +141,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-converter");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-search("Berlin");
+search("Dublin, IE");
 
 displayForecast();
