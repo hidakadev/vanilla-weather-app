@@ -139,6 +139,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-converter");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-search("Dublin");
+search("Berlin");
 
 displayForecast();
