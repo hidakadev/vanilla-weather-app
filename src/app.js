@@ -42,7 +42,7 @@ function displayForecast(resp) {
                 forecastHTML +
                 `<div class="col-2"><h3>${formatDay(
           forecastDay.dt
-        )}</h3><ul><li><img src="https://openweathermap.org/img/wn/${
+        )}</h3><ul><li><img class="forecast-icon" src="https://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png" alt="${forecastDay.weather[0].description}" width="40"></li>
             <li class="forecast-temp-max">${Math.round(

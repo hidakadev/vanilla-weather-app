@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+.forecast-icon {
+    margin-bottom: 10px;
+}
+
 .forecast-temp-max,
 .forecast-temp-min {
     margin: 0 auto;
@@ -42,7 +46,6 @@
 
 .weather-forecast {
     font-size: 12px;
-    margin-bottom: 5px;
     text-align: center;
 }
 
