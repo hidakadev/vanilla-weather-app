@@ -29,8 +29,8 @@ function formatDay(timestamps) {
     return weekdays[nextDay];
 }
 
-function displayForecast(response) {
-    let forecast = response.data.daily;
+function displayForecast(resp) {
+    let forecast = resp.data.daily;
 
     let forecastElement = document.querySelector("#forecast");
 
